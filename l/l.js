@@ -62,7 +62,7 @@ function data(i,v){
     var path = $.map(v.geometry.paths[0],mapLL);
      var color;
     if(ft.status==="Existing"){
-     color="#ff9900";   
+     color="#FF9900";   
     }else if(ft.status==="Proposed"){
         color="#ff0000";   
         
@@ -70,9 +70,10 @@ function data(i,v){
         color="#000000";   
         
     }
-    ft.line = new L.Polyline(path,{color:color});
+    ft.line = new L.Polyline(path,{color:color,opacity:1});
     lines.push(ft);
     d.addLayer(ft.line);
+    ft.line.bindPopup("<div class='iw'>"+ft.name+" which is "+ft.status+"</div>");
 }
 $('#tabs-2').append('<select id="stat"><option value="all">Choose Status</option></select>');
 
