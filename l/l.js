@@ -1,5 +1,5 @@
-var w;
 $(function() {
+var w;
 uiStuff();
 var d= new L.LayerGroup();
 var url = "http://services.massdot.state.ma.us/ArcGIS/rest/services/Assets/FiberOpticLines/MapServer/0/query?outFields=*&f=json&outSR=4326&where=OBJECTID+%3E+0";
@@ -62,7 +62,7 @@ function data(i,v){
     var path = $.map(v.geometry.paths[0],mapLL);
      var color;
     if(ft.status==="Existing"){
-     color="#FF9900";   
+     color="#ff9900";   
     }else if(ft.status==="Proposed"){
         color="#ff0000";   
         
@@ -70,10 +70,9 @@ function data(i,v){
         color="#000000";   
         
     }
-    ft.line = new L.Polyline(path,{color:color,opacity:1});
+    ft.line = new L.Polyline(path,{color:color});
     lines.push(ft);
     d.addLayer(ft.line);
-    ft.line.bindPopup("<div class='iw'>"+ft.name+" which is "+ft.status+"</div>");
 }
 $('#tabs-2').append('<select id="stat"><option value="all">Choose Status</option></select>');
 

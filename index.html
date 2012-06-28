@@ -70,6 +70,17 @@
 <li class="slide" id="itdoesstillexist">back end tiles and search from mapquest</li>
 <li class="slide" id="copouter">lets just look at <a href="https://github.com/calvinmetcalf/esri/blob/master/l/l.js" target="_blank">the source</a></li>
 </ul>
+</section><section class="slide" id="NotLikely">
+<h2>Misc Stuff if I'm fast</h2>
+<ul>
+<li class="slide" id="TheDataThisIsBasedOnIsInFEET">the amount of client side processing needs to be
+<a href="http://xdr-cwm.rhcloud.com/" target="_blank">within reason</a></li>
+<li class="slide" id="IDontLikeTheColorsEither">For <a href="http://its-otp.rhcloud.com/mpo" target="_blank">bigger ones</a> you can combine client side and server side</li> 
+<li class="slide" id="flash">people arn't going to accept your flash maps when you can do this in your brwser</li>
+</ul>
+</section>
+<section class="slide" id="map">
+
 </section>
 <!-- deck.navigation snippet -->
 <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
@@ -113,6 +124,15 @@ $(function() {
 	$.deck('.slide');
 });
 </script>
-
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBvl2Lx_Tj-9N_fT9arfnl8utRkVPe50uA&sensor=false"></script>
+<script type="text/javascript">$(function() {
+var m =  new google.maps.Map(document.getElementById("map"), {
+    center: new google.maps.LatLng(42.361422,-71.057152),
+    zoom: 21,
+    mapTypeId: google.maps.MapTypeId.SATELLITE
+    });
+      m.setTilt(45);
+  m.setHeading(90);
+});</script>
 </body>
 </html>
